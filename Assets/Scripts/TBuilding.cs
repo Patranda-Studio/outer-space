@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class TBuilding : MonoBehaviour { // Класс здания
     public int id; // Индекс
+    public int requiredMetal; // Необходимое кол-во металла для строительства
+    public int cooldown;
+    public int cooldownMax;
     public Renderer MainRenderer; // Рендер для изменения цвета
     public GameObject Model; // Модель
     public Vector2Int Size = Vector2Int.one; // Размер
@@ -50,6 +53,15 @@ public class TBuilding : MonoBehaviour { // Класс здания
             for (int i = 0; i < ConnectorPlace.Length; i++) { // Проход по массиву коннекторов
                 ConnectorPlace[i].SetActive(false); // Выключение коннекторов
             }
+        }
+    }
+
+    // Дествие выполняемое при строительстве здания
+    public void OnCreate()
+    {
+        if (id == 2)
+        {
+            Resource.humansMax += 10;
         }
     }
 }

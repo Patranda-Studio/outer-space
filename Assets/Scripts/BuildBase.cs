@@ -51,7 +51,7 @@ public class BuildBase : MonoBehaviour {
                 flyingBuilding.SetTransparent(available);
 
 
-                if (available && Input.GetMouseButtonDown(0)) {
+                if (available && Input.GetMouseButtonDown(0) && (Resource.metal >= flyingBuilding.GetComponent<TBuilding>().requiredMetal)) {
                     for (int i = 0; i < flyingBuilding.Size.x; i++) {
                         for (int j = 0; j < flyingBuilding.Size.y; j++) {
                             WorldGenerator.landspace[x + i, y + j].GetComponent<TCell>().isEmpty = false;
@@ -62,6 +62,8 @@ public class BuildBase : MonoBehaviour {
                             }
                         }
                     }
+                    flyingBuilding.GetComponent<TBuilding>().OnCreate(); // Выполнение дествия при строительстве
+                    Resource.metal -= flyingBuilding.GetComponent<TBuilding>().requiredMetal; // Плата за постройку
                     buildContainer.Add(flyingBuilding.transform.gameObject);
                     flyingBuilding.transform.SetParent(buildParent.transform);
                     flyingBuilding.SetNormal();

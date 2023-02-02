@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 2
+  requiredMetal: 15
   MainRenderer: {fileID: 6783427857850918695}
   Model: {fileID: 4136320625011485122}
   Size: {x: 3, y: 3}
@@ -67,7 +68,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2873524288970110785, guid: d35e1032ed07b21409558e0a7a938aeb, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2873524288970110789, guid: d35e1032ed07b21409558e0a7a938aeb, type: 3}
       propertyPath: m_RootOrder

@@ -131,6 +131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 1
+  requiredMetal: 1000
   MainRenderer: {fileID: 2162319197903277355}
   Model: {fileID: 4602403386953050038}
   Size: {x: 1, y: 3}
